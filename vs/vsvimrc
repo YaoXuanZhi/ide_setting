@@ -1,0 +1,17 @@
+" ====================== vsvim 配置  By yaoxuanzhi ======================
+
+" 定义老板键
+:let mapleader = ";"
+
+" 打开折叠或者关闭折叠
+:nmap <space> za
+
+" 代码注释
+:vnoremap <Leader>cc :s/^/\/\/<cr>
+:vnoremap <Leader>cu :s/\/\//<cr>
+:nnoremap <Leader>cc :s/^/\/\/<cr>
+:nnoremap <Leader>cu :s/\/\//<cr>
+
+" 往后
+:nmap <C-o> :vsc View.NavigateBackward<cr>
+:nmap <C-i> :vsc View.NavigateForward<cr>
