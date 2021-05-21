@@ -7,10 +7,10 @@
 :nmap <space> za
 
 " 代码注释
-:vnoremap <Leader>cc :s/^/\/\/<cr>
-:vnoremap <Leader>cu :s/\/\//<cr>
-:nnoremap <Leader>cc :s/^/\/\/<cr>
-:nnoremap <Leader>cu :s/\/\//<cr>
+:vnoremap <Leader>cc :vsc Edit.CommentSelection<cr>
+:vnoremap <Leader>cu :vsc Edit.UncommentSelection<cr>
+:nnoremap <Leader>cc :vsc Edit.CommentSelection<cr>
+:nnoremap <Leader>cu :vsc Edit.UncommentSelection<cr>
 
 " 往后
 :nmap <C-o> :vsc View.NavigateBackward<cr>
