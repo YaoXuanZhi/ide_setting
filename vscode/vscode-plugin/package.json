@@ -1,0 +1,109 @@
+{
+    "name": "yxz-keybindings",
+    "displayName": "yxz Keymap",
+    "description": "本人自用的跨IDE快捷键",
+    "version": "1.0.0",
+    "publisher": "yxz-vscode",
+    "engines": {
+        "vscode": "^0.10.1",
+		"node": ">6.0.0"
+    },
+    "categories": [
+        "Keymaps"
+    ],
+    "keywords": [
+        "keymap",
+        "yxz"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YaoXuanZhi/ide_setting_sync/tree/main/vscode"
+    },
+    "bugs": {
+        "url": "https://github.com/YaoXuanZhi/ide_setting_sync/issues"
+    },
+	"icon": "images/logo.png",
+
+    "contributes": {
+        "keybindings": [
+            {
+                "key": "alt+m",
+                "command": "workbench.action.gotoSymbol"
+            },
+            {
+                "key": "ctrl+shift+o",
+                "command": "-workbench.action.gotoSymbol"
+            },
+            {
+                "key": "alt+g",
+                "command": "editor.action.revealDefinition",
+                "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+            },
+            {
+                "key": "f12",
+                "command": "-editor.action.revealDefinition",
+                "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "-remote-wsl.revealInExplorer",
+                "when": "editorFocus && remoteName == 'wsl'"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "-revealFileInOS",
+                "when": "!editorFocus"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "references-view.findReferences",
+                "when": "editorHasReferenceProvider"
+            },
+            {
+                "key": "shift+alt+f12",
+                "command": "-references-view.findReferences",
+                "when": "editorHasReferenceProvider"
+            },
+            {
+                "key": "shift+alt+s",
+                "command": "workbench.action.findInFiles"
+            },
+            {
+                "key": "ctrl+shift+f",
+                "command": "-workbench.action.findInFiles"
+            },
+            {
+                "key": "shift+alt+o",
+                "command": "workbench.action.quickOpen"
+            },
+            {
+                "key": "ctrl+p",
+                "command": "-workbench.action.quickOpen"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "editor.action.goToReferences",
+                "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+            },
+            {
+                "key": "shift+f12",
+                "command": "-editor.action.goToReferences",
+                "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+            },
+            {
+                "key": "ctrl+shift+space",
+                "command": "editor.action.triggerParameterHints",
+                "when": "editorHasSignatureHelpProvider && editorTextFocus"
+            },
+            {
+                "key": "ctrl+shift+space",
+                "command": "-editor.action.triggerParameterHints",
+                "when": "editorHasSignatureHelpProvider && editorTextFocus"
+            },
+            {
+                "key": "alt+i",
+                "command": "editor.action.showDefinitionPreviewHover"
+            }
+        ]
+    }
+}
