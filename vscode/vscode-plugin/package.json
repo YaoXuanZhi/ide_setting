@@ -4,6 +4,7 @@
     "description": "本人自用的跨IDE快捷键",
     "version": "1.0.0",
     "publisher": "yxz-vscode",
+	"license": "MIT",
     "engines": {
         "vscode": "^0.10.1",
 		"node": ">6.0.0"
@@ -105,5 +106,10 @@
                 "command": "editor.action.showDefinitionPreviewHover"
             }
         ]
-    }
+    },
+	"__metadata": {
+		"id": "9cc31dd7-7ec4-4a46-bd4f-7d7b59d322a",
+		"publisherId": "dever-yaoxuanzhi",
+		"publisherDisplayName": "耀轩之"
+	}
 }
