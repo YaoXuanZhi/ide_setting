@@ -3,7 +3,7 @@
     "displayName": "yxz Keymap",
     "description": "本人自用的跨IDE快捷键",
     "version": "1.0.0",
-    "publisher": "yxz-vscode",
+    "publisher": "dever-yaoxuanzhi",
 	"license": "MIT",
     "engines": {
         "vscode": "^0.10.1",
