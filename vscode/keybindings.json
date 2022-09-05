@@ -29,7 +29,7 @@
         "when": "!editorFocus"
     },
     {
-        "key": "shift+alt+r",
+        "key": "alt+f7",
         "command": "references-view.findReferences",
         "when": "editorHasReferenceProvider"
     },
@@ -55,11 +55,6 @@
         "command": "-workbench.action.quickOpen"
     },
     {
-        "key": "shift+alt+r",
-        "command": "editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
         "key": "shift+f12",
         "command": "-editor.action.goToReferences",
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
@@ -77,5 +72,64 @@
     {
         "key": "alt+i",
         "command": "editor.action.showDefinitionPreviewHover"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k shift+n",
+        "command": "bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+n",
+        "command": "bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+f11",
+        "command": "bookmarks.listFromAllFiles"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "debug.renameWatchExpression",
+        "when": "watchExpressionsFocused"
+    },
+    {
+        "key": "f2",
+        "command": "-debug.renameWatchExpression",
+        "when": "watchExpressionsFocused"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "-bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
     }
 ]
