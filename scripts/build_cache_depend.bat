@@ -19,6 +19,7 @@ call :create_link .vscode %USERPROFILE%
 call :create_link JetBrains %LOCALAPPDATA%
 call :create_link Unity %LOCALAPPDATA%
 call :create_link Unity3dRider %TEMP%
+call :create_link uTools %APPDATA%
 
 pause
 
