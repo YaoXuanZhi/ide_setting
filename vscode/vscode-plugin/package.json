@@ -158,6 +158,11 @@
                 "key": "shift+alt+l",
                 "command": "-bookmarks.expandSelectionToNext",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+k",
+                "command": "-extension.vim_ctrl+k",
+                "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
             }
         ]
     },
