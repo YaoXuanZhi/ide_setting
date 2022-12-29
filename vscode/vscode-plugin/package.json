@@ -2,7 +2,7 @@
     "name": "yxz-keybindings",
     "displayName": "yxz Keymap",
     "description": "本人自用的跨IDE快捷键",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "dever-yaoxuanzhi",
 	"license": "MIT",
     "engines": {
