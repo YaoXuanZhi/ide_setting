@@ -2,8 +2,9 @@
     "name": "yxz-keybindings",
     "displayName": "yxz Keymap",
     "description": "本人自用的跨IDE快捷键",
-    "version": "1.0.0",
-    "publisher": "yxz-vscode",
+    "version": "1.0.1",
+    "publisher": "dever-yaoxuanzhi",
+	"license": "MIT",
     "engines": {
         "vscode": "^0.10.1",
 		"node": ">6.0.0"
@@ -55,7 +56,7 @@
                 "when": "!editorFocus"
             },
             {
-                "key": "shift+alt+r",
+                "key": "alt+f7",
                 "command": "references-view.findReferences",
                 "when": "editorHasReferenceProvider"
             },
@@ -81,11 +82,6 @@
                 "command": "-workbench.action.quickOpen"
             },
             {
-                "key": "shift+alt+r",
-                "command": "editor.action.goToReferences",
-                "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-            },
-            {
                 "key": "shift+f12",
                 "command": "-editor.action.goToReferences",
                 "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
@@ -103,7 +99,76 @@
             {
                 "key": "alt+i",
                 "command": "editor.action.showDefinitionPreviewHover"
+            },
+            {
+                "key": "ctrl+k ctrl+k",
+                "command": "bookmarks.toggle",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+alt+k",
+                "command": "-bookmarks.toggle",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+k shift+n",
+                "command": "bookmarks.jumpToPrevious",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+alt+j",
+                "command": "-bookmarks.jumpToPrevious",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+k ctrl+n",
+                "command": "bookmarks.jumpToNext",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+alt+l",
+                "command": "-bookmarks.jumpToNext",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "shift+f11",
+                "command": "bookmarks.listFromAllFiles"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "editor.action.rename",
+                "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+            },
+            {
+                "key": "f2",
+                "command": "-editor.action.rename",
+                "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+            },
+            {
+                "key": "shift+alt+r",
+                "command": "debug.renameWatchExpression",
+                "when": "watchExpressionsFocused"
+            },
+            {
+                "key": "f2",
+                "command": "-debug.renameWatchExpression",
+                "when": "watchExpressionsFocused"
+            },
+            {
+                "key": "shift+alt+l",
+                "command": "-bookmarks.expandSelectionToNext",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+k",
+                "command": "-extension.vim_ctrl+k",
+                "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
             }
         ]
-    }
+    },
+	"__metadata": {
+		"id": "9cc31dd7-7ec4-4a46-bd4f-7d7b59d322a",
+		"publisherId": "dever-yaoxuanzhi",
+		"publisherDisplayName": "耀轩之"
+	}
 }
