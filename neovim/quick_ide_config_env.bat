@@ -1,5 +1,5 @@
 @echo off
-set user=user-ide-config4
+set user=user-ide-config
 call "%~dp0set_nvim_env.bat"
 
 if exist %LOCALAPPDATA% (
