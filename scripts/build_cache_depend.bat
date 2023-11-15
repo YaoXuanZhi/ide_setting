@@ -1,65 +1,67 @@
 @echo off
 
-::ÅĞ¶ÏÊÇ·ñÒÑ¾­»ñÈ¡ÁË¹ÜÀíÔ±Éí·İ
-Md "%WinDir%\System32\test_permissions" 2>NUL||(Echo ÇëÊ¹ÓÃÓÒ¼ü¹ÜÀíÔ±Éí·İÔËĞĞ&&Pause >NUL&&Exit)
+::åˆ¤æ–­æ˜¯å¦å·²ç»è·å–äº†ç®¡ç†å‘˜èº«ä»½
+Md "%WinDir%\System32\test_permissions" 2>NUL||(Echo è¯·ä½¿ç”¨å³é”®ç®¡ç†å‘˜èº«ä»½è¿è¡Œ&&Pause >NUL&&Exit)
 Rd "%WinDir%\System32\test_permissions" 2>NUL
 SetLocal EnableDelayedExpansion
 
 set localDirName=UserData
 
-::ÇĞ»»µ½¸Ã½Å±¾µÄËùÔÚÄ¿Â¼
+::åˆ‡æ¢åˆ°è¯¥è„šæœ¬çš„æ‰€åœ¨ç›®å½•
 cd /d %~dp0
 
-::´´½¨²¢ÇĞ»»µ½×Ô¶¨ÒåµÄ»º´æÄ¿Â¼
+::åˆ›å»ºå¹¶åˆ‡æ¢åˆ°è‡ªå®šä¹‰çš„ç¼“å­˜ç›®å½•
 call :create_local_dir %localDirName%
 cd /d %localDirName%
 
 call :create_link .nuget %USERPROFILE%
 call :create_link .vscode %USERPROFILE%
+call :create_link .conda %USERPROFILE%
 call :create_link JetBrains %LOCALAPPDATA%
 call :create_link Unity %LOCALAPPDATA%
 call :create_link Unity3dRider %TEMP%
 call :create_link uTools %APPDATA%
 call :create_link .logseq %USERPROFILE%
+call :create_link UnrealEngine %LOCALAPPDATA%
 
 pause
 
-::--------------------------- ·½·¨ ---------------------------
+::--------------------------- æ–¹æ³• ---------------------------
 
-::desc ´´½¨Ö¸¶¨Ä¿Â¼²¢Éú³É¶ÔÓ¦µÄÄ¿Â¼Á´½Ó
-::source_dir [in] Ô´ÎÄ¼ş¼ĞÃû
-::target_path [in] Á´½Óµ½µÄÄ¿±êÂ·¾¶
+::desc åˆ›å»ºæŒ‡å®šç›®å½•å¹¶ç”Ÿæˆå¯¹åº”çš„ç›®å½•é“¾æ¥
+::source_dir [in] æºæ–‡ä»¶å¤¹å
+::target_path [in] é“¾æ¥åˆ°çš„ç›®æ ‡è·¯å¾„
 :create_link
 call :create_local_dir %1
-if exist %2 (call :bind_link %1 %2) else (²»´æÔÚ%2£¬ÇëÖØĞÂÈ·ÈÏ¸ÃÂ·¾¶)
+if exist %2 (call :bind_link %1 %2) else (ä¸å­˜åœ¨%2ï¼Œè¯·é‡æ–°ç¡®è®¤è¯¥è·¯å¾„)
 GOTO :eof
 
-::desc Éú³ÉÄ¿Â¼Á´½Ó
-::source_dir [in] Ô´ÎÄ¼ş¼ĞÃû
-::target_path [in] Á´½Óµ½µÄÄ¿±êÂ·¾¶
+::desc ç”Ÿæˆç›®å½•é“¾æ¥
+::source_dir [in] æºæ–‡ä»¶å¤¹å
+::target_path [in] é“¾æ¥åˆ°çš„ç›®æ ‡è·¯å¾„
 :bind_link
 set tempDir=%2/%1
-::È¥µôÂ·¾¶ÉÏµÄË«ÒıºÅ
+::å»æ‰è·¯å¾„ä¸Šçš„åŒå¼•å·
 set "tempDir=%tempDir:"=%"
 
 if not exist "%tempDir%" (
     mklink /d "%tempDir%" "%cd%/%1"
 ) else (
-    echo "%tempDir%"ÒÑ¾­´æÔÚ£¬Ìø¹ı
+    echo "%tempDir%"å·²ç»å­˜åœ¨ï¼Œè·³è¿‡
 )
 GOTO :eof
 
-::desc ÔÚµ±Ç°Ä¿Â¼ÏÂ´´½¨Ä¿Â¼
-::path [in] ´ı´´½¨µÄÄ¿Â¼Â·¾¶
+::desc åœ¨å½“å‰ç›®å½•ä¸‹åˆ›å»ºç›®å½•
+::path [in] å¾…åˆ›å»ºçš„ç›®å½•è·¯å¾„
 :create_local_dir
 if not exist "%cd%/%1" (
     mkdir "%cd%/%1"
-    echo ³É¹¦´´½¨ÁË"%cd%/%1"
+    echo æˆåŠŸåˆ›å»ºäº†"%cd%/%1"
 )
 GOTO :eof
 
-::desc È¥µô±äÁ¿Á½²àµÄË«ÒıºÅ
-::var [in] ´ıÌæ»»Ë«ÒıºÅµÄ±äÁ¿
+::desc å»æ‰å˜é‡ä¸¤ä¾§çš„åŒå¼•å·
+::var [in] å¾…æ›¿æ¢åŒå¼•å·çš„å˜é‡
 :removequotes
 FOR /F "delims=" %%A IN ('echo %%%1%%') DO set %1=%%~A
 GOTO :eof
