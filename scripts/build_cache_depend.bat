@@ -16,6 +16,7 @@ cd /d %localDirName%
 
 call :create_link .nuget %USERPROFILE%
 call :create_link .vscode %USERPROFILE%
+call :create_link .vscode-insiders %USERPROFILE%
 call :create_link .conda %USERPROFILE%
 call :create_link JetBrains %LOCALAPPDATA%
 call :create_link Unity %LOCALAPPDATA%
